@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>박지상 포트폴리오 | BGF리테일 SC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --navy: #0B2D6E;
+  --navy-mid: #1A4FA8;
+  --navy-light: #E8F0FB;
+  --orange: #FF6B00;
+  --orange-light: #FFF3EA;
+  --yellow: #FFBC00;
+  --white: #FFFFFF;
+  --bg: #F2F4F8;
+  --gray-800: #1E1E2E;
+  --gray-600: #4A4E69;
+  --gray-400: #9A9CB0;
+  --gray-200: #E2E5EF;
+  --gray-100: #F7F8FC;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--gray-800);
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: var(--white);
+}
+
+/* HEADER */
+.header {
+  background: var(--navy);
+  padding: 38px 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hg1 { position: absolute; right: -30px; top: -30px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,188,0,0.12); }
+.hg2 { position: absolute; right: 80px; top: 50px; width: 80px; height: 80px; border-radius: 50%; background: rgba(255,107,0,0.1); }
+.hg3 { position: absolute; left: -20px; bottom: 0; width: 100px; height: 100px; border-radius: 50%; background: rgba(26,79,168,0.3); }
+
+.header-inner { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,188,0,0.15); border: 1px solid rgba(255,188,0,0.4);
+  padding: 4px 12px; border-radius: 100px;
+  font-size: 10.5px; color: var(--yellow); font-weight: 500; letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); }
+
+.name { font-size: 44px; font-weight: 900; color: var(--white); letter-spacing: -2px; line-height: 1; }
+.name-en { font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 300; letter-spacing: 3px; margin-top: 4px; }
+
+.header-right { display: flex; flex-direction: column; gap: 6px; text-align: right; padding-top: 4px; }
+.contact-row { display: flex; align-items: center; justify-content: flex-end; gap: 8px; font-size: 11.5px; color: rgba(255,255,255,0.65); }
+.cicon { width: 18px; height: 18px; background: rgba(255,255,255,0.1); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+
+.tagline-bar { margin-top: 22px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 1; }
+.tagline-text { font-size: 12.5px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.65; }
+.tagline-text strong { color: var(--white); font-weight: 700; }
+.tagline-text em { color: var(--yellow); font-style: normal; }
+
+/* KPI BAND */
+.kpi-band { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--navy-mid); }
+.kpi-cell { padding: 13px 0; text-align: center; border-right: 1px solid rgba(255,255,255,0.12); }
+.kpi-cell:last-child { border-right: none; }
+.kpi-num { display: block; font-size: 22px; font-weight: 900; color: var(--white); line-height: 1.1; letter-spacing: -0.5px; }
+.kpi-label { display: block; font-size: 9.5px; color: rgba(255,255,255,0.65); margin-top: 3px; }
+
+/* BODY */
+.body-grid { display: grid; grid-template-columns: 1fr 186px; }
+.main-col { padding: 30px 34px 30px 48px; border-right: 1px solid var(--gray-200); }
+.side-col { padding: 30px 20px; background: var(--gray-100); }
+
+/* SECTION LABEL */
+.sec-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--navy-mid); margin-bottom: 14px;
+}
+.sec-label::after { content: ''; flex: 1; height: 1.5px; background: var(--navy-light); border-radius: 2px; }
+.sec-label span { background: var(--navy); color: var(--white); font-size: 9px; padding: 2px 7px; border-radius: 100px; }
+
+/* BENTO */
+.bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 26px; }
+.bento-card { background: var(--gray-100); border-radius: 10px; padding: 13px; position: relative; overflow: hidden; }
+.bento-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--navy-mid); border-radius: 10px 10px 0 0; }
+.bento-card.or::after { background: var(--orange); }
+.bento-card.yl::after { background: var(--yellow); }
+.bento-icon { font-size: 16px; margin-bottom: 5px; display: block; }
+.bento-title { font-size: 11.5px; font-weight: 700; color: var(--gray-800); margin-bottom: 3px; }
+.bento-desc { font-size: 10.5px; color: var(--gray-600); line-height: 1.5; }
+
+/* CAREER */
+.section { margin-bottom: 26px; }
+.career-block { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--gray-200); }
+.career-block:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+.career-head { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 11px; }
+.career-dot {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 11px; color: var(--white); font-weight: 900; letter-spacing: -0.5px;
+}
+.career-dot.or { background: var(--orange); }
+.career-meta { flex: 1; }
+.career-org { font-size: 14.5px; font-weight: 700; color: var(--gray-800); }
+.career-sub { font-size: 11px; color: var(--gray-400); margin-top: 1px; }
+.period-badge {
+  display: inline-block; margin-top: 4px;
+  background: var(--navy-light); color: var(--navy-mid);
+  font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 100px;
+}
+
+.sum-pill {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: var(--white); border-radius: 9px; padding: 11px 15px;
+  font-size: 11.5px; line-height: 1.65; margin-bottom: 13px;
+  position: relative; overflow: hidden;
+}
+.sum-pill::before {
+  content: ''; position: absolute; right: -10px; bottom: -10px;
+  width: 60px; height: 60px; border-radius: 50%; background: rgba(255,188,0,0.15);
+}
+.sum-pill strong { color: var(--yellow); }
+
+/* PROJ */
+.proj-list { display: flex; flex-direction: column; gap: 10px; }
+.proj-item {
+  padding: 11px 13px; background: var(--white);
+  border-radius: 8px; border: 1px solid var(--gray-200); position: relative;
+}
+.proj-item::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--navy-mid); border-radius: 4px 0 0 4px;
+}
+.proj-item.or::before { background: var(--orange); }
+.proj-item.yl::before { background: var(--yellow); }
+.proj-name { font-size: 12px; font-weight: 700; color: var(--gray-800); margin-bottom: 6px; }
+
+.bul { list-style: none; padding: 0; }
+.bul li { font-size: 11.5px; color: var(--gray-600); line-height: 1.6; padding-left: 13px; position: relative; margin-bottom: 2px; }
+.bul li::before { content: '·'; position: absolute; left: 3px; color: var(--navy-mid); font-size: 14px; line-height: 1.35; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+.rtag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 100px; background: var(--navy-light); color: var(--navy-mid); }
+.rtag.hot { background: var(--orange); color: var(--white); }
+.rtag.gold { background: var(--yellow); color: var(--gray-800); }
+
+/* SIDE */
+.side-sec { margin-bottom: 20px; }
+.side-sec:last-child { margin-bottom: 0; }
+.side-title { font-size: 9px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--navy-mid); margin-bottom: 9px; padding-bottom: 5px; border-bottom: 1.5px solid var(--navy-light); }
+
+.side-card { background: var(--white); border-radius: 8px; border: 1px solid var(--gray-200); padding: 9px 11px; margin-bottom: 5px; }
+.side-card:last-child { margin-bottom: 0; }
+.sc-name { font-size: 11.5px; font-weight: 700; color: var(--gray-800); line-height: 1.3; }
+.sc-sub { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+.edu-gpa { display: inline-block; margin-top: 4px; background: var(--navy); color: var(--white); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+
+.award-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; border-left: 3px solid var(--orange); padding: 8px 11px; margin-bottom: 5px; }
+.award-card:last-child { margin-bottom: 0; }
+.award-name { font-size: 11px; font-weight: 700; color: var(--gray-800); line-height: 1.35; }
+.award-sub { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+
+.skill-row { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.skill-row:last-child { margin-bottom: 0; }
+.skill-name { font-size: 10.5px; color: var(--gray-600); width: 68px; flex-shrink: 0; }
+.skill-track { flex: 1; height: 5px; background: var(--gray-200); border-radius: 3px; overflow: hidden; }
+.skill-fill { height: 100%; background: var(--navy-mid); border-radius: 3px; }
+
+.extra-item { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+.extra-item:last-child { margin-bottom: 0; }
+.extra-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--navy-mid); margin-top: 5px; flex-shrink: 0; }
+.extra-main { font-size: 11px; font-weight: 700; color: var(--gray-800); line-height: 1.3; }
+.extra-sub { font-size: 10px; color: var(--gray-400); line-height: 1.4; margin-top: 1px; }
+
+@media print { body { background: white; } .page { box-shadow: none; } }
+@page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="hg1"></div><div class="hg2"></div><div class="hg3"></div>
+  <div class="header-inner">
+    <div>
+      <div class="chip">BGF리테일 · SC 영업관리 직무 지원</div>
+      <div class="name">박지상</div>
+      <div class="name-en">PARK JI SANG</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-row"><div class="cicon">📱</div>010-6286-9227</div>
+      <div class="contact-row"><div class="cicon">✉</div>pjpj987@naver.com</div>
+    </div>
+  </div>
+  <div class="tagline-bar">
+    <div class="tagline-text">
+      <em>현장을 읽고 구조를 설계하며, 데이터로 다음 실행을 만들어왔습니다.</em><br>
+      매장별 데이터 분석으로 운영을 재설계하고, <strong>파트너와 함께 체계를 구축하며 성과로 이어온 방식을 그대로 가져오겠습니다.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- KPI BAND -->
+<div class="kpi-band">
+  <div class="kpi-cell">
+    <span class="kpi-num">+64%</span>
+    <span class="kpi-label">팝업 초회 대비 일평균 판매량 증가</span>
+  </div>
+  <div class="kpi-cell">
+    <span class="kpi-num">×2↑</span>
+    <span class="kpi-label">체계화 후 하반기 전체 매장 매출</span>
+  </div>
+  <div class="kpi-cell">
+    <span class="kpi-num">8곳</span>
+    <span class="kpi-label">B2B 후원사 유치</span>
+  </div>
+  <div class="kpi-cell">
+    <span class="kpi-num">1.08%</span>
+    <span class="kpi-label">재고 로스율 달성</span>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-grid">
+<div class="main-col">
+
+  <!-- SC CORE -->
+  <div class="section">
+    <div class="sec-label"><span>01</span> SC 핵심 역량</div>
+    <div class="bento-grid">
+      <div class="bento-card">
+        <span class="bento-icon">📊</span>
+        <div class="bento-title">데이터 기반 점포 개선</div>
+        <div class="bento-desc">팝업 초회 데이터 분석 → 동선·매대 재설계<br>→ 초회 대비 일평균 판매량 64% 증가</div>
+      </div>
+      <div class="bento-card or">
+        <span class="bento-icon">🤝</span>
+        <div class="bento-title">파트너 관계 구축</div>
+        <div class="bento-desc">파트너사 운영 방식 먼저 파악<Br> → 맞춤 가이드라인 설계 → 정기 발주 주기 안착</div>
+      </div>
+      <div class="bento-card yl">
+        <span class="bento-icon">📋</span>
+        <div class="bento-title">운영 체계화</div>
+        <div class="bento-desc">매뉴얼 없는 상황에서 5단계 프로세스 설계 <Br>→ 팀매뉴얼 수립 / 로스율 1.08%</div>
+      </div>
+      <div class="bento-card">
+        <span class="bento-icon">⚡</span>
+        <div class="bento-title">현장 돌발 대응</div>
+        <div class="bento-desc">팝업 오픈 직전 재고 부족 <Br>→ 즉각적인 업무 분장·외부 조달로 오픈 시간 준수</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER -->
+  <div class="section">
+    <div class="sec-label"><span>02</span> 경력</div>
+
+    <!-- 재단 -->
+    <div class="career-block">
+      <div class="career-head">
+        <div class="career-dot">STO</div>
+        <div class="career-meta">
+          <div class="career-org">(재) 서울관광재단 · 관광브랜드팀 주임</div>
+          <div class="career-sub">계약직 &nbsp;|&nbsp; 서울 공식 브랜드 굿즈 매장·재고관리, 마케팅 </div>
+          <span class="period-badge">2024.06 — 2025.12 &nbsp;|&nbsp; 1년 6개월</span>
+        </div>
+      </div>
+
+      <div class="sum-pill">
+        <strong>직영·위탁 7개 매장 운영 관리 · 팝업스토어 총 4회 기획·운영</strong><br>
+        운영 체계 정비 이후 하반기 전체 매장 매출 상반기 대비 2배 이상 성장 <br> 팝업 4회 누계 방문객 약 7,800명, 매출 약 800만원 달성
+      </div>
+
+      <div class="proj-list">
+
+        <div class="proj-item or">
+          <div class="proj-name">직영·위탁 7개 매장 운영 관리</div>
+          <ul class="bul">
+            <li>직영 4개소(서울관광플라자·세종문화회관·명동관광정보센터·여의도한강공원) 정기 방문
+            <li>매장별 데이터 분석 기반 상권 맞춤 진열 전략 수립
+            <li style="margin-left: 12px; list-style-type: none; color: #6A6E8A; font-size: 11.5px;">명동점(외국인 관광객 多): 엽서·문구류 전면 배치, 1,000원 존 POP 운영으로 구매 장벽 완화</li>
+            <li style="margin-left: 12px; list-style-type: none; color: #6A6E8A; font-size: 11.5px;">세종문화회관점(내국인 중심·객단가 약 2배): 여유로운 매대 구성으로 상품 부각, 고객 경험 향상</li>
+            <li>위탁 3개소: 품목명·코드 통일, 발주 시기 고정 등 공통 가이드라인 설정 → 정기 발주 주기 안착</li>
+            <li>전 매장 공통 운영 매뉴얼 구축, 민원 핫라인 구축, 재고 시트 개편 (재입고 예정·품절 가시화)</li>
+            <li>운영 매장 전년 대비 40% 증가 환경에서도 안정적 운영 유지 
+            <li>신규 여의도 한강공원점 운영 안정화 통한 오픈 2개월 만에 방문객 1만 명 돌파
+          </ul>
+          <div class="tag-row">
+            <span class="rtag hot">체계화 후 하반기 매출 상반기 대비 2배↑</span>
+            <span class="rtag">공통 매뉴얼 팀 표준 정착</span>
+          </div>
+        </div>
+
+        <div class="proj-item yl">
+          <div class="proj-name">팝업스토어 총 4회 기획·운영</div>
+          <ul class="bul">
+            <li>초회 방문객 동선·품목별 매출 데이터 분석 → 전환율 낮은 구간 파악 → 부스 구성·매대 위치 재설계</li>
+            <li>재설계 이후 초회 대비 일평균 판매량 64% 증가, 방문객 수 2배 증가</li>
+            <li>4회 누계 약 7,800명 방문, 매출 약 800만원 달성</li>
+            <li>오픈 직전 재고 부족 돌발 상황 → 팀원 업무 재분장 및 주변 매장 방문해 수량 조달 → 오픈 시간 준수</li>
+          </ul>
+          <div class="tag-row">
+            <span class="rtag hot">초회 대비 일평균 판매량 64% 증가</span>
+            <span class="rtag gold">방문객 수 2배 증가</span>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-name">재고 관리 체계 구축 — 월평균 약 200개 품목 · 9,000개 · 30회 입출고</div>
+          <ul class="bul">
+            <li>사업 초기 매뉴얼 부재 상황 → 타 기업 사례 자발 학습 + ERP 교육 자율 참가</li>
+            <li>발주-납품-입고-판매-정산 5단계 구조화 → 팀 표준 매뉴얼 완성</li>
+            <li>균일가전 기획으로 악성 재고 중 약 40% 소진</li>
+          </ul>
+          <div class="tag-row">
+            <span class="rtag hot">로스율 1.08% 달성</span>
+            <span class="rtag">악성 재고 40% 소진</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 드림스코프 -->
+    <div class="career-block">
+      <div class="career-head">
+        <div class="career-dot or">DS</div>
+        <div class="career-meta">
+          <div class="career-org">(주) 드림스코프 · 스포츠마케팅팀 인턴</div>
+          <div class="career-sub">부산 광안리 APP World Tour Busan SUP Open 홍보·운영 지원</div>
+          <span class="period-badge">2022.03 — 2023.04 &nbsp;|&nbsp; 1년 2개월</span>
+        </div>
+      </div>
+
+      <div class="sum-pill">
+        <strong>외국인 선수단 약 20명 팸투어 전일정 기획·운영 / 여러 기업에 컨택해 후원사 8곳 유치 지원.</strong><br>
+        국내 최초 SUP 국제대회 약 1,000명 규모 현장 운영 지원. KTO·문체부 K-컬쳐 관광이벤트 100선 선정.
+      </div>
+
+      <div class="proj-list">
+
+        <div class="proj-item or">
+          <div class="proj-name">외국인 선수단 약 20명 팸투어 전일정 기획·운영</div>
+          <ul class="bul">
+            <li>버스·호텔·식당·관광지·통역사 사전 컨택 및 선수단 이동·일정 전 과정 기획·운영</li>
+            <li>본사 외국인 직원과 현장 운영 스탭 사이 영어 기반 커뮤니케이션 담당, 현장 혼선 최소화</li>
+            <li>식이·종교 제한 사전 확인 등 디테일 선제 관리 → 팸투어 만족도 90% 이상 달성</li>
+          </ul>
+          <div class="tag-row">
+            <span class="rtag hot">팸투어 만족도 90%+</span>
+            <span class="rtag gold">K-컬쳐 관광이벤트 100선 선정</span>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-name">후원사 유치 지원 — 20개 기업 컨택 → 8곳 유치</div>
+          <ul class="bul">
+            <li>스포츠 브랜드·음료·라이프스타일 기업 다수에 컨택 → 마케팅 니즈 파악</li>
+            <li>기업별 소구점(Z세대 접점, 여름 시즌 브랜드 경험 등) 정리해 제안 자료 작성</li>
+          </ul>
+          <div class="tag-row">
+            <span class="rtag hot">후원사 8곳 유치</span>
+          </div>
+        </div>
+
+        <div class="proj-item yl">
+          <div class="proj-name">약 1,000명 규모 국제대회 현장 운영 지원</div>
+          <ul class="bul">
+            <li>참가자 및 선수단 응대, 현장 진행 보조를 통해 운영 흐름 유지 지원</li>
+            <li>문라이트 투어·드론쇼·사일런트 비치 파티 등 5개 부대행사 병행 환경에서 현장 대응</li>
+            <li>광안리 해변 이용을 위한 수영구청 협업 업무 보조</li>
+          </ul>
+          <div class="tag-row">
+            <span class="rtag">1,000명 규모 현장 운영 경험</span>
+            <span class="rtag">5개 부대행사 병행 대응</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SIDE COL -->
+<div class="side-col">
+
+  <div class="side-sec">
+    <div class="side-title">학력</div>
+    <div class="side-card">
+      <div class="sc-name">세종대학교</div>
+      <div class="sc-sub">호텔관광경영학과</div>
+      <div class="sc-sub">2018.02 — 2025.08</div>
+      <span class="edu-gpa">4.28 / 4.5</span>
+    </div>
+  </div>
+
+  <div class="side-sec">
+    <div class="side-title">자격증</div>
+    <div class="side-card">
+      <div class="sc-name">컴퓨터활용능력 1급</div>
+      <div class="sc-sub">2023.02</div>
+    </div>
+    <div class="side-card">
+      <div class="sc-name">SQLD</div>
+      <div class="sc-sub">2023.04</div>
+    </div>
+    <div class="side-card">
+      <div class="sc-name">한국사능력검정 1급</div>
+      <div class="sc-sub">2026.02</div>
+    </div>
+    <div class="side-card">
+      <div class="sc-name">자동차운전면허 1종보통</div>
+      <div class="sc-sub">2018.01</div>
+    </div>
+  </div>
+
+  <div class="side-sec">
+    <div class="side-title">어학</div>
+    <div class="side-card">
+      <div class="sc-name">OPIC IH</div>
+      <div class="sc-sub">2025.10</div>
+    </div>
+    <div class="side-card">
+      <div class="sc-name">TOEIC 935</div>
+      <div class="sc-sub">2024.02</div>
+    </div>
+  </div>
+
+  <div class="side-sec">
+    <div class="side-title">수상</div>
+    <div class="award-card">
+      <div class="award-name">한국공공브랜드대상 <br> 최우수상</div>
+      <div class="award-sub">한국공공브랜드진흥원 · 2025.11<br>서울마이소울샵 수상</div>
+    </div>
+    <div class="award-card">
+      <div class="award-name">에어비앤비 아카데미<br> 최우수팀</div>
+      <div class="award-sub">에어비앤비 코리아 · 2023.09<br>비즈니스 팀장으로 참여</div>
+    </div>
+    <div class="award-card">
+      <div class="award-name">교내 공모전 대상</div>
+      <div class="award-sub">세종대학교 · 2018.12<br>관광업계 진흥 아이디어 제안</div>
+    </div>
+  </div>
+
+  <div class="side-sec">
+    <div class="side-title">기타 경험</div>
+    <div class="extra-item">
+      <div class="extra-dot"></div>
+      <div>
+        <div class="extra-main">서울 MICE 서포터즈</div>
+        <div class="extra-sub">팀장 <br>2024.04—2024.12<br>운영요원 4회 · 전문교육 이수</div>
+      </div>
+    </div>
+    <div class="extra-item">
+      <div class="extra-dot"></div>
+      <div>
+        <div class="extra-main">세종글로벌버디 홍보팀</div>
+        <div class="extra-sub">팀원 <br>2023.03—2023.08<br>교환학생 도우미, 카드뉴스 제작</div>
+      </div>
+    </div>
+    <div class="extra-item">
+      <div class="extra-dot"></div>
+      <div>
+        <div class="extra-main">M&L 학술 소모임</div>
+        <div class="extra-sub">팀원 <br>2018.03—2018.12<br>공모전 과제 준비 · 발표 수행</div>
+      </div>
+    </div>
+    <div class="extra-item">
+      <div class="extra-dot"></div>
+      <div>
+        <div class="extra-main">영어학원 조교</div>
+        <div class="extra-sub">2018 — 2020<br>내신 체계 직접 제안·도입</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-sec">
+    <div class="side-title">업무 스킬</div>
+    <div class="skill-row">
+      <span class="skill-name">스프레드시트</span>
+      <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">데이터 분석</span>
+      <div class="skill-track"><div class="skill-fill" style="width:82%"></div></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">PPT · 보고서</span>
+      <div class="skill-track"><div class="skill-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">영어 소통</span>
+      <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">재고·운영 관리</span>
+      <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</body>
+</html>
